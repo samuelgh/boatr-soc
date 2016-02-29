@@ -1,0 +1,15 @@
+{
+  "name": "linkit-sender",
+  "version": "0.0.1",
+  "description": "App to send voltage and temperature data to thingspeak",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "samgau",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.69.0",
+    "serialport": "^2.0.6"
+  }
+}
