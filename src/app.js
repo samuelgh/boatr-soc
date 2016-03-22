@@ -29,8 +29,12 @@ if (!process.argv[2]) {
 
   function sendSerialData(data) {
     console.log("data:" + data);
-    var jsonData = JSON.parse(data);
-    request('https://api.thingspeak.com/update?api_key=CQS552MLOQ7ZM0Q5&field1=' + data.volt1 +'&field2=' + data.temp ,
+    try {
+      var jsonData = JSON.parse(data);
+    } catch (e) {
+       console.log("Could not parse data: " + data);
+    }
+    request('https://api.thingspeak.com/update?api_key=CQS552MLOQ7ZM0Q5&field1=' + jsonData.volt1 +'&field2=' + jsonData.temp +'&field3=10',
       function (error, response, body) {
         if (!error && response.statusCode == 200) {
           console.log('Sent request, got response:' + body) // Show the HTML for the Google homepage.
