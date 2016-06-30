@@ -11,8 +11,8 @@ def loop():
         print('looping')
         data = json.loads(s.readline())
         print(data)
-        url = ('https://api.thingspeak.com/update?api_key=CQS552MLOQ7ZM0Q5&field1='
-        + str(data['volt1']) +'&field2=' + str(data['temp']) +'&field3=10')
+        url = ('https://data.sparkfun.com/input/LQ9yDE9Ym0FAbYYGLYLV?private_key=A1qY6eqX92Sg8zzlvzv2&temp='
+        + str(data['volt1']) +'&volt=' + str(data['temp']))
         print(urllib2.urlopen(url).read())
 if __name__ == '__main__':
         print('Staring program')
