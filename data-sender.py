@@ -13,7 +13,10 @@ def loop():
         print(data)
         url = ('https://data.sparkfun.com/input/LQ9yDE9Ym0FAbYYGLYLV?private_key=A1qY6eqX92Sg8zzlvzv2&volt='
         + str(data['volt1']) +'&temp=' + str(data['temp']))
-        print(urllib2.urlopen(url).read())
+        try:
+            print(urllib2.urlopen(url).read())
+        except:
+            print "Could not send data"
 if __name__ == '__main__':
         print('Staring program')
         setup()
